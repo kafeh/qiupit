@@ -13,12 +13,10 @@ namespace UnityStandardAssets.CrossPlatformInput
 			OnlyHorizontal, // Only horizontal
 			OnlyVertical // Only vertical
 		}
-
 	    int MovementRange = 50;
 		public AxisOption axesToUse = AxisOption.Both; // The options for the axes that the still will use
 		public string horizontalAxisName = "Horizontal"; // The name given to the horizontal axis for the cross platform input
 		public string verticalAxisName = "Vertical"; // The name given to the vertical axis for the cross platform input
-        public GameObject pivot;
         private Quaternion originalRotation;
 		Vector3 m_StartPos;
 		bool m_UseX; // Toggle for using the x axis
@@ -30,13 +28,11 @@ namespace UnityStandardAssets.CrossPlatformInput
 		{
 			CreateVirtualAxes();
 		}
-
         void Start()
         {
-            m_StartPos = transform.position;
+            m_StartPos = Camera.main.WorldToViewportPoint(transform.position);
             originalRotation = transform.rotation;
         }
-
 		void UpdateVirtualAxes(Vector3 value)
 		{
 			var delta = m_StartPos - value;
@@ -51,10 +47,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			{
 				m_VerticalVirtualAxis.Update(delta.y);
 			}
-
-            
         }
-
 		void CreateVirtualAxes()
 		{
 			// set axes to use
@@ -73,8 +66,6 @@ namespace UnityStandardAssets.CrossPlatformInput
 				CrossPlatformInputManager.RegisterVirtualAxis(m_VerticalVirtualAxis);
 			}
 		}
-
-
 		public void OnDrag(PointerEventData data)
 		{
 			Vector3 newPos = Vector3.zero;
@@ -109,8 +100,6 @@ namespace UnityStandardAssets.CrossPlatformInput
             transform.rotation = Quaternion.Euler(0, 0, AngleDeg);*/
             UpdateVirtualAxes(transform.position);
 		}
-
-
         public void OnPointerUp(PointerEventData data)
         {
 
@@ -118,8 +107,6 @@ namespace UnityStandardAssets.CrossPlatformInput
             transform.rotation = transform.rotation = Quaternion.Slerp(transform.rotation, originalRotation, 400 * Time.deltaTime);
             UpdateVirtualAxes(m_StartPos);
 		}
-
-
 		public void OnPointerDown(PointerEventData data) {
 
             /*float AngleRad = Mathf.Atan2(Input.mousePosition.y - transform.position.y, Input.mousePosition.x - transform.position.x);
@@ -127,7 +114,6 @@ namespace UnityStandardAssets.CrossPlatformInput
             transform.rotation = Quaternion.Euler(0, 0, AngleDeg);*/
 
         }
-
 		void OnDisable()
 		{
 			// remove the joysticks from the cross platform input
