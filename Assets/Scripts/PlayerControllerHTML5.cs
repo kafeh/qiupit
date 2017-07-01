@@ -18,10 +18,10 @@ public class PlayerControllerHTML5 : MonoBehaviour
         timeCount = 0f;
         enemies = new GameObject[3];
 
-        for (int i = 0; i < 3; i++)
+        /*for (int i = 0; i < 3; i++)
         {
             enemies[i] = Instantiate(enemy, new Vector3(Random.Range(-1000.0F, 1000.0F), Random.Range(-1000.0F, 1000.0F), 0), Quaternion.identity);
-        }
+        }*/
     }
 
     void FixedUpdate()

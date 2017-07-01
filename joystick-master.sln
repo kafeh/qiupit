@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joystick-master", "Joystick
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joystick-master.Editor.Plugins", "Joystick-master.Editor.Plugins.csproj", "{A31E4E61-950D-B1AF-878C-DB43667C4D7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joystick-master.Editor", "Joystick-master.Editor.csproj", "{DBCC66DA-A613-74AF-0672-D08A9F63D0BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{A31E4E61-950D-B1AF-878C-DB43667C4D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A31E4E61-950D-B1AF-878C-DB43667C4D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A31E4E61-950D-B1AF-878C-DB43667C4D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBCC66DA-A613-74AF-0672-D08A9F63D0BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBCC66DA-A613-74AF-0672-D08A9F63D0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBCC66DA-A613-74AF-0672-D08A9F63D0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBCC66DA-A613-74AF-0672-D08A9F63D0BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
